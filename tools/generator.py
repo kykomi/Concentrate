@@ -24,8 +24,8 @@ def make_element():
     return dict
 
 def make_block_simple_domain_element(url_filter):
-    base_element = make_element()
-    trigger = make_trigger()
+    base_element = make_element()    
+    trigger = make_trigger() if len(url_filter) >= 8 else make_trigger_with_white_list()
     trigger["url-filter"] = url_filter
     base_element["trigger"] = trigger
     return base_element
