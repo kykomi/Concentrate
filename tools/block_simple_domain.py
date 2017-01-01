@@ -4,8 +4,8 @@ import os, sys, re
 def to_only_domain(v):
     tmp =  re.sub(r'^\|\|', '', v) # 否定の || を削除
     tmp2 = re.sub(r'^\|https?:/{0,2}', '', tmp) # |http(s): を削除
-    return tmp2
-
+    tmp3 = tmp2.replace('*', '.*').replace('?', '\?')
+    return tmp3
 
 def make_simple_domain_list(name):
     # || →　全部一致
