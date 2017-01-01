@@ -40,7 +40,7 @@ def generate():
     print(generated_json)
 
     block_json = open('generated_block_list.json', 'w+')
-    block_json.write(generated_json)
+    block_json.write(generated_json.lower())
     block_json.close()
 
 global white_list_domains
