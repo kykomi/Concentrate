@@ -1,0 +1,10 @@
+[{
+ "trigger": {
+    "url-filter": "webkit.org",
+    "resource-type": ["popup"]
+ },
+ "action": {
+    "selector": "#logo",
+    "type": "block"
+ }
+}]
