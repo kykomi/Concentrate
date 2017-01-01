@@ -25,7 +25,8 @@ def make_simple_domain_list(name):
     # 含まれていないものを対象
     simple_domains = []
     removing_ptn = re.compile(r'(\^|\$)')
-    for domain in domains:
+    unique_domains = list(set(domains))
+    for domain in unique_domains:
         match = removing_ptn.search(domain)
         if match == None:        
             simple_domains.append(domain)
