@@ -29,9 +29,8 @@ def make_block_simple_domain_element(url_filter):
     trigger["url-filter"] = url_filter
     base_element["trigger"] = trigger
     return base_element
-    
 
-def generate():
+def generate_simple_json_file():
     block_simple_url_list = []    
     for filter_domain in make_simple_domain_list('abp_jp.txt'):
         block_simple_url_list.append(make_block_simple_domain_element(filter_domain))
@@ -41,7 +40,12 @@ def generate():
 
     block_json = open('generated_block_simple_list.json', 'w+')
     block_json.write(generated_json.lower())
-    block_json.close()
+    block_json.close()    
+
+def generate():
+    generate_simple_json_file()
+
+
 
 global white_list_domains
 if __name__ == '__main__':
