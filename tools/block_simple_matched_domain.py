@@ -4,8 +4,8 @@ import os, sys, re
 def to_only_domain(v):
     tmp =  re.sub(r'^\|\|', '', v) # ドメインを表す || を削除
     tmp2 = re.sub(r'^\|https?:/{0,2}', '', tmp) # |http(s): を削除
-    tmp3 = tmp2.replace('\n', '').replace('^', '[^0-9a-z_\-%]')
-    tmp4 = tmp3.replace('*', '.*').replace('?', '\?').replace('|', '')
+    tmp3 = tmp2.replace('\n', '').replace('^', '[^0-9a-z_\-%\.]') # adblock の^ は 区切り文字
+    tmp4 = tmp3.replace('*', '[0-9a-z_\-%\.]*').replace('?', '\?').replace('|', '')
     return tmp4
 
 def make_simple_domain_matched_list(name):
@@ -40,7 +40,7 @@ def make_simple_domain_matched_list(name):
     simple_domains = []
     unique_domains = list(set(target_domains))
     for domain in unique_domains:
-        simple_domains.append("^https?://[^/]*" + domain + "[^0-9a-z_\-%\.]")
+        simple_domains.append("^https?://[^/]*" + domain)
     return simple_domains
 
 if __name__ == '__main__':

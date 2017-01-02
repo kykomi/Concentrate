@@ -15,6 +15,8 @@
 		5D0067761E18CF1900462E4D /* blockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D0067751E18CF1900462E4D /* blockerList.json */; };
 		5D0067781E18CF1900462E4D /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0067771E18CF1900462E4D /* ContentBlockerRequestHandler.swift */; };
 		5D00677C1E18CF1900462E4D /* Blocking.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5D0067731E18CF1800462E4D /* Blocking.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5D0C04041E19F681002D8B16 /* generated_block_simple_matched_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D0C04031E19F681002D8B16 /* generated_block_simple_matched_list.json */; };
+		5D0C04061E19F722002D8B16 /* generated_block_simple_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D0C04051E19F722002D8B16 /* generated_block_simple_list.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		5D0067751E18CF1900462E4D /* blockerList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blockerList.json; sourceTree = "<group>"; };
 		5D0067771E18CF1900462E4D /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
 		5D0067791E18CF1900462E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D0C04031E19F681002D8B16 /* generated_block_simple_matched_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = generated_block_simple_matched_list.json; sourceTree = "<group>"; };
+		5D0C04051E19F722002D8B16 /* generated_block_simple_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = generated_block_simple_list.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 		5D0067741E18CF1900462E4D /* Blocking */ = {
 			isa = PBXGroup;
 			children = (
+				5D0C04051E19F722002D8B16 /* generated_block_simple_list.json */,
+				5D0C04031E19F681002D8B16 /* generated_block_simple_matched_list.json */,
 				5D0067751E18CF1900462E4D /* blockerList.json */,
 				5D0067771E18CF1900462E4D /* ContentBlockerRequestHandler.swift */,
 				5D0067791E18CF1900462E4D /* Info.plist */,
@@ -209,6 +215,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D0C04061E19F722002D8B16 /* generated_block_simple_list.json in Resources */,
+				5D0C04041E19F681002D8B16 /* generated_block_simple_matched_list.json in Resources */,
 				5D0067761E18CF1900462E4D /* blockerList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,6 +437,7 @@
 				5D00676E1E18CDEA00462E4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D00677D1E18CF1900462E4D /* Build configuration list for PBXNativeTarget "Blocking" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +446,7 @@
 				5D00677F1E18CF1900462E4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
