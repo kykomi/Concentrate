@@ -15,10 +15,13 @@ class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
         let attachmentOfSimpleBlackList = NSItemProvider(contentsOf: Bundle.main.url(forResource: "generated_block_simple_list", withExtension: "json"))!
 
         
+        
         let attachment = NSItemProvider(contentsOf: Bundle.main.url(forResource: "generated_block_simple_matched_list", withExtension: "json"))!
         
         let item = NSExtensionItem()
-        item.attachments = [attachmentOfSimpleBlackList, attachment]
+        item.attachments = [attachmentOfSimpleBlackList]
+        //item.attachments = [attachment]
+
         
         context.completeRequest(returningItems: [item], completionHandler: nil)
     }
