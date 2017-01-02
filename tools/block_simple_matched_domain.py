@@ -4,7 +4,7 @@ import os, sys, re
 def to_only_domain(v):
     tmp =  re.sub(r'^\|\|', '', v) # ドメインを表す || を削除
     tmp2 = re.sub(r'^\|https?:/{0,2}', '', tmp) # |http(s): を削除
-    tmp3 = tmp2.replace('\n', '').replace('^', '[^0-9a-z_\-%\.]') # adblock の^ は 区切り文字
+    tmp3 = tmp2.replace('\n', '').replace('^', '[^0-9a-z_\-%\.]') # adblock の ^ は 区切り文字(:, /)
     tmp4 = tmp3.replace('*', '[0-9a-z_\-%\.]*').replace('?', '\?').replace('|', '')
     return tmp4
 
