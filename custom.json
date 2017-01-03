@@ -1,0 +1,9 @@
+[{
+	"action": {
+		"type": "block"
+	},
+	"trigger": {
+		"url-filter": "^https?.*\\.?logly\\.co\\.jp",
+		"unless-domain": ["logly\\.co.\\jp"]
+	}
+}]

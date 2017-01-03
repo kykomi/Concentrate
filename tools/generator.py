@@ -17,10 +17,10 @@ def make_trigger_with_white_list():
         "unless-domain": white_list_domains
     }
 
-def make_hide_trigger():
+def make_hide_trigger(domain):
     return {
-        "url-filter": "",        
-        "unless-domain": [] # あとで
+        "url-filter": domain,
+        "unless-domain": ['example.com'] # あとで
     }
 
 def make_block_action():
@@ -42,7 +42,7 @@ def make_block_simple_domain_element(url_filter):
 
 def make_hide_element(domain, selector):
     base_element = make_element()
-    trigger = make_hide_trigger()
+    trigger = make_hide_trigger(domain)
     base_element["trigger"] = trigger
     base_element["action"] = make_hide_action(selector)
     return base_element
@@ -74,7 +74,8 @@ def generate_simple_matched_json_file():
 def generate_element_hide_json_file():
     hide_list = []    
     for hide_selector in make_hide_element_list('abp_jp_element_hiding.txt'):
-        hide_list.append(make_hide_element(hide_selector))
+        # 第一引数はドメイン　あとで
+        hide_list.append(make_hide_element('.*', hide_selector))
 
     generated_json = json.dumps(hide_list, indent = 2)
     print(generated_json)
