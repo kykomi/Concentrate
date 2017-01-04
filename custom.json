@@ -6,4 +6,15 @@
 		"url-filter": "^https?.*\\.?logly\\.co\\.jp",
 		"unless-domain": ["logly\\.co.\\jp"]
 	}
-}]
+},
+{
+	"action": {
+        "selector":"#unitedblades_div",
+		"type": "css-display-none"
+	},
+	"trigger": {
+		"url-filter":"blog.*\\.fc2\\.com"
+	}
+}
+]
+

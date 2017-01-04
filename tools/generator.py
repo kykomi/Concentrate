@@ -4,7 +4,7 @@ import json
 from white_list_domain import make_white_domain_list,make_element_white_domain_list
 from block_simple_domain import make_simple_domain_list
 from block_simple_matched_domain import make_simple_domain_matched_list
-from hide_element import make_hide_element_list
+from hide_element import make_hide_element_list, make_hide_element_list_with_url
 
 def make_trigger():
     return {
@@ -18,10 +18,13 @@ def make_trigger_with_white_list():
     }
 
 def make_hide_trigger(domain):
-    return {
-        "url-filter": domain,
-        "unless-domain": white_element_hide_domains_list
-    }
+    if (domain == '.*'):        
+        return {
+            "url-filter": domain,
+            "unless-domain": white_element_hide_domains_list
+        }
+    else:
+        return { "url-filter" : domain}
 
 def make_block_action():
     return {"type": "block"}
@@ -72,10 +75,16 @@ def generate_simple_matched_json_file():
     block_json.close()
 
 def generate_element_hide_json_file():
-    hide_list = []    
-    for hide_selector in make_hide_element_list('abp_jp_element_hiding.txt'):
+    file_name = 'abp_jp_element_hiding.txt'
+    hide_list = []
+    # ドメインがワイルドカード    
+    for hide_selector in make_hide_element_list(file_name):
         # 第一引数はドメイン　あとで
         hide_list.append(make_hide_element('.*', hide_selector))
+
+    # ドメイン指定
+    for domain_and_selector in make_hide_element_list_with_url(file_name):
+        hide_list.append(make_hide_element(domain_and_selector[0], domain_and_selector[1]))
 
     generated_json = json.dumps(hide_list, indent = 2)
 
