@@ -25,6 +25,7 @@
 @@||advertban.com^$elemhide
 ! A false positive with TV CM link including -ads- , reported by 通りすがりの火狐ユーザー via blog, Jun 13, 2013
 @@||apple.com^$elemhide
+@@||apple.co.jp^$elemhide
 @@||code.google.com^$elemhide
 @@||indeep76.com^$elemhide
 @@||lavasoft.com^$elemhide

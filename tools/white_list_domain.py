@@ -5,7 +5,7 @@ def remove_adblock_syntax(v):
     tmp =  re.sub(r'^@@', '', v) # 否定の @@ を削除
     tmp2 = re.sub(r'\|\|', '', tmp) # 行頭の || で http, httpsを削除
     tmp3 = re.sub(r'(\^|\$).*', '', tmp2) # ホワイトリストのため ^, $, 以降のコンテンツタイプは表示は無視
-    return tmp3.replace('*', '.*').replace('?', '\?').replace('|', '')
+    return tmp3.replace('.','\.').replace('*', '.*').replace('?', '\?').replace('|', '')
 
 def make_white_domain_list(name):
     ptn = re.compile(r'^@@(.|\.|\/)*')
@@ -19,7 +19,8 @@ def make_white_domain_list(name):
     f.close()
     return white_domains
 
-
+def make_element_white_domain_list(name):
+    return make_white_domain_list(name)    
 
 if __name__ == '__main__':
-    make_white_domain_list('abp_jp.txt')
+    make_element_white_domain_list('abp_jp_element_hiding.txt')

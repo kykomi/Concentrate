@@ -21,8 +21,6 @@ def make_hide_element_list(name):
             target_lines.append(l)
     f.close()
 
-    # 末尾の独自ルール付きは無視。別で対応 (^や$でパターン指定)
-    # 含まれていないものを対象
     hide_items = []
     css_path_starting_with_selector_ptn = re.compile(r'^#.*')
     for l in target_lines:
