@@ -58,7 +58,7 @@ def generate_simple_json_file():
     generated_json = json.dumps(block_simple_url_list, indent = 2)
     print(generated_json)
 
-    block_json = open('generated_block_simple_list.json', 'w+')
+    block_json = open('block_simple_list.json', 'w+')
     block_json.write(generated_json.lower())
     block_json.close()    
 
@@ -70,7 +70,7 @@ def generate_simple_matched_json_file():
     generated_json = json.dumps(block_simple_url_list, indent = 2)
     print(generated_json)
 
-    block_json = open('generated_block_simple_matched_list.json', 'w+')
+    block_json = open('block_simple_matched_list.json', 'w+')
     block_json.write(generated_json.lower())
     block_json.close()
 
@@ -88,7 +88,7 @@ def generate_element_hide_json_file():
 
     generated_json = json.dumps(hide_list, indent = 2)
 
-    element_hide_json = open('generated_element_hide.json', 'w+')
+    element_hide_json = open('element_hide.json', 'w+')
     element_hide_json.write(generated_json.lower())
     element_hide_json.close()
 
