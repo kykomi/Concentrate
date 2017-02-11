@@ -12,9 +12,10 @@ import MobileCoreServices
 class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
 
     func beginRequest(with context: NSExtensionContext) {
-     
+        
+        let fileName = "merged"
         let attachment = NSItemProvider(contentsOf: Bundle.main.url(
-            forResource: "merged",
+            forResource: fileName,
             withExtension: "json"))!
        
         let item = NSExtensionItem()

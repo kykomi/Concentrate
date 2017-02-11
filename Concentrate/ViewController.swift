@@ -14,12 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        SFContentBlockerManager.reloadContentBlocker(
-            withIdentifier: "com.kykomi.Concentrate.Blocking",
-            completionHandler: { e in
-                guard let e = e else { return }
-                print(e)})
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,6 +22,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    @IBAction func switchChanged(_ sender: Any) {
+        
+        
+        SFContentBlockerManager.reloadContentBlocker(
+            withIdentifier: "com.kykomi.Concentrate.Blocking",
+            completionHandler: { e in
+                guard let e = e else { return }
+                print(e)}
+        )
+    }
 
 }
 

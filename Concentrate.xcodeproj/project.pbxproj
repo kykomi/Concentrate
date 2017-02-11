@@ -12,7 +12,7 @@
 		5D0067631E18CDEA00462E4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0067611E18CDEA00462E4D /* Main.storyboard */; };
 		5D0067651E18CDEA00462E4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D0067641E18CDEA00462E4D /* Assets.xcassets */; };
 		5D0067681E18CDEA00462E4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0067661E18CDEA00462E4D /* LaunchScreen.storyboard */; };
-		5D0067761E18CF1900462E4D /* blockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D0067751E18CF1900462E4D /* blockerList.json */; };
+		5D0067761E18CF1900462E4D /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D0067751E18CF1900462E4D /* empty.json */; };
 		5D0067781E18CF1900462E4D /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0067771E18CF1900462E4D /* ContentBlockerRequestHandler.swift */; };
 		5D00677C1E18CF1900462E4D /* Blocking.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5D0067731E18CF1800462E4D /* Blocking.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5DC895E31E238655005CF7CA /* merged.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DC895E21E238655005CF7CA /* merged.json */; };
@@ -51,7 +51,7 @@
 		5D0067671E18CDEA00462E4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D0067691E18CDEA00462E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D0067731E18CF1800462E4D /* Blocking.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Blocking.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D0067751E18CF1900462E4D /* blockerList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blockerList.json; sourceTree = "<group>"; };
+		5D0067751E18CF1900462E4D /* empty.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
 		5D0067771E18CF1900462E4D /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
 		5D0067791E18CF1900462E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DC895E21E238655005CF7CA /* merged.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = merged.json; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				5DC895E21E238655005CF7CA /* merged.json */,
-				5D0067751E18CF1900462E4D /* blockerList.json */,
+				5D0067751E18CF1900462E4D /* empty.json */,
 				5D0067771E18CF1900462E4D /* ContentBlockerRequestHandler.swift */,
 				5D0067791E18CF1900462E4D /* Info.plist */,
 			);
@@ -212,7 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D0067761E18CF1900462E4D /* blockerList.json in Resources */,
+				5D0067761E18CF1900462E4D /* empty.json in Resources */,
 				5DC895E31E238655005CF7CA /* merged.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
