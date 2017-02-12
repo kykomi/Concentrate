@@ -11,11 +11,12 @@ import SafariServices
 
 class EntryViewControllerTableViewController: UITableViewController, CategoryChoiceDelegate {
     
+    var selectedCategory: Category!
     var articles: [HatebArticle] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        load(Category.it)
+        load(Category.hotentry)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +26,7 @@ class EntryViewControllerTableViewController: UITableViewController, CategoryCho
     
     // MARK: - Original Methods
     func load(_ category: Category) {
+        selectedCategory = category
         RssRequestClient().request(category, status: .hot, completionHandler: self.didLoadArticles)
     }
     
@@ -32,6 +34,7 @@ class EntryViewControllerTableViewController: UITableViewController, CategoryCho
         self.articles = articles
         DispatchQueue.main.async { [weak self] in
             guard let wself = self else { return }
+            wself.navigationItem.title = wself.selectedCategory.title()
             wself.tableView.reloadData()
         }
     }

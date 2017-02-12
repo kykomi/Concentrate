@@ -12,7 +12,16 @@ class RssRequestClient {
     static let baseUrl = "http://b.hatena.ne.jp/"
     
     func request(_ category: Category, status: EntryStatus, completionHandler: @escaping ([HatebArticle])->Void)-> Void {
-        let rssUrlString = RssRequestClient.baseUrl + status.rawValue + "/" + category.rawValue + ".rss"
+        
+        func pathFor(_ category: Category, and status: EntryStatus) -> String {
+            if category == .hotentry {
+                return "hotentry.rss"
+            } else {
+                return status.rawValue + "/" + category.rawValue + ".rss"
+            }
+        }
+        
+        let rssUrlString = RssRequestClient.baseUrl + pathFor(category, and: status)
         let url = URL(string: rssUrlString)!
         URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
             if let error = error {

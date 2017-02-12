@@ -36,7 +36,7 @@ class CategoryChoiceTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath)
-        cell.textLabel?.text = Category.values()[indexPath.row].rawValue
+        cell.textLabel?.text = Category.values()[indexPath.row].title()
         return cell
     }
     
