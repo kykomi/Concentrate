@@ -99,13 +99,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="entry" id="gLr-eu-OB9">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="entry" id="Foc-AX-Ipf" customClass="EntryCellTableViewCell" customModule="Concentrate" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gLr-eu-OB9" id="pzP-iT-zC5">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Foc-AX-Ipf" id="zok-H6-OzF">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトルタイトルタイトルタイトルタイトルタイトル" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgl-4v-2zz">
+                                            <rect key="frame" x="16" y="12" width="359" height="19"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="xgl-4v-2zz" secondAttribute="trailing" id="Bqg-yD-feN"/>
+                                        <constraint firstAttribute="bottom" secondItem="xgl-4v-2zz" secondAttribute="bottom" constant="12" id="C8h-ct-xgd"/>
+                                        <constraint firstItem="xgl-4v-2zz" firstAttribute="leading" secondItem="zok-H6-OzF" secondAttribute="leading" constant="16" id="aIS-YO-FXO"/>
+                                        <constraint firstItem="xgl-4v-2zz" firstAttribute="top" secondItem="zok-H6-OzF" secondAttribute="top" constant="12" id="ooc-wG-cQO"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="title" destination="xgl-4v-2zz" id="OLz-E7-vub"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -123,7 +140,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PUK-6B-CRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1782" y="-1110"/>
+            <point key="canvasLocation" x="1781.5999999999999" y="-1110.4947526236883"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fsa-Fd-Mdc">

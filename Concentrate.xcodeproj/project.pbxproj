@@ -18,6 +18,7 @@
 		5D0E23951E4FEEA300C70250 /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0E23941E4FEEA300C70250 /* RssParser.swift */; };
 		5D0E23971E50226500C70250 /* EntryViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0E23961E50226500C70250 /* EntryViewControllerTableViewController.swift */; };
 		5D0E239A1E50366700C70250 /* CategoryChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0E23991E50366700C70250 /* CategoryChoiceTableViewController.swift */; };
+		5D0E239D1E503E7300C70250 /* EntryCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0E239C1E503E7300C70250 /* EntryCellTableViewCell.swift */; };
 		5D3AA1DD1E4EF19500A7BF25 /* HatebArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AA1DC1E4EF19500A7BF25 /* HatebArticle.swift */; };
 		5D3AA1DF1E4EF21800A7BF25 /* RssRequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AA1DE1E4EF21800A7BF25 /* RssRequestClient.swift */; };
 		5D3AA1E11E4EF24100A7BF25 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AA1E01E4EF24100A7BF25 /* Category.swift */; };
@@ -64,6 +65,7 @@
 		5D0E23941E4FEEA300C70250 /* RssParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RssParser.swift; sourceTree = "<group>"; };
 		5D0E23961E50226500C70250 /* EntryViewControllerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewControllerTableViewController.swift; sourceTree = "<group>"; };
 		5D0E23991E50366700C70250 /* CategoryChoiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryChoiceTableViewController.swift; sourceTree = "<group>"; };
+		5D0E239C1E503E7300C70250 /* EntryCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryCellTableViewCell.swift; sourceTree = "<group>"; };
 		5D3AA1DC1E4EF19500A7BF25 /* HatebArticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HatebArticle.swift; sourceTree = "<group>"; };
 		5D3AA1DE1E4EF21800A7BF25 /* RssRequestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RssRequestClient.swift; sourceTree = "<group>"; };
 		5D3AA1E01E4EF24100A7BF25 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		5D0067511E18CDE900462E4D = {
 			isa = PBXGroup;
 			children = (
+				5D0E239B1E503E5A00C70250 /* View */,
 				5D0E23981E50226900C70250 /* Controller */,
 				5D3AA1DA1E4EF11600A7BF25 /* Model */,
 				5D00675C1E18CDEA00462E4D /* Concentrate */,
@@ -140,6 +143,14 @@
 				5D0E23991E50366700C70250 /* CategoryChoiceTableViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		5D0E239B1E503E5A00C70250 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5D0E239C1E503E7300C70250 /* EntryCellTableViewCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		5D3AA1DA1E4EF11600A7BF25 /* Model */ = {
@@ -265,6 +276,7 @@
 				5D3AA1E11E4EF24100A7BF25 /* Category.swift in Sources */,
 				5D3AA1DF1E4EF21800A7BF25 /* RssRequestClient.swift in Sources */,
 				5D00675E1E18CDEA00462E4D /* AppDelegate.swift in Sources */,
+				5D0E239D1E503E7300C70250 /* EntryCellTableViewCell.swift in Sources */,
 				5D3AA1E31E4EF48000A7BF25 /* EntryStatus.swift in Sources */,
 				5D3AA1DD1E4EF19500A7BF25 /* HatebArticle.swift in Sources */,
 				5D0E239A1E50366700C70250 /* CategoryChoiceTableViewController.swift in Sources */,

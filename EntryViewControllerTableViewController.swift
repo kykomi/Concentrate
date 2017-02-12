@@ -47,9 +47,12 @@ class EntryViewControllerTableViewController: UITableViewController, CategoryCho
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "entry", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "entry", for: indexPath) as? EntryCellTableViewCell else {
+            fatalError("Can not cast EntryCellTableViewCell")
+        }
+        
         let entry = self.articles[indexPath.row]
-        cell.textLabel?.text = entry.title
+        cell.setData(entry)
         return cell
     }
     
@@ -57,6 +60,10 @@ class EntryViewControllerTableViewController: UITableViewController, CategoryCho
         let selected = articles[indexPath.row]
         let sfVC = SFSafariViewController(url: selected.url, entersReaderIfAvailable: false)
         present(sfVC, animated: true, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
     }
 
     // MARK: - Navigation
