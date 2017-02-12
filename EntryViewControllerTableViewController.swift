@@ -16,6 +16,8 @@ class EntryViewControllerTableViewController: UITableViewController, CategoryCho
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 70
         load(Category.hotentry)
     }
 
@@ -65,10 +67,6 @@ class EntryViewControllerTableViewController: UITableViewController, CategoryCho
         present(sfVC, animated: true, completion: nil)
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
-    }
-
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         ((segue.destination as? UINavigationController)?.topViewController as? CategoryChoiceTableViewController)?.delegate = self
