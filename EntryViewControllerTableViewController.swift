@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import SafariServices
 
 class EntryViewControllerTableViewController: UITableViewController {
     
-    var entries: [HatebArticle] = []
+    var articles: [HatebArticle] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +25,12 @@ class EntryViewControllerTableViewController: UITableViewController {
     
     // MARK: - Original Methods
     func load() {
-        RssRequestClient().request(category: .it, status: .hot, completionHandler: self.didLoadEntry)
+        RssRequestClient().request(category: .it, status: .hot, completionHandler: self.didLoadArticles)
         tableView.reloadData()
     }
     
-    func didLoadEntry(entries: [HatebArticle]) {
-        self.entries = entries
+    func didLoadArticles(articles: [HatebArticle]) {
+        self.articles = articles
         DispatchQueue.main.async { [weak self] in
             guard let wself = self else { return }
             wself.tableView.reloadData()
@@ -42,14 +43,20 @@ class EntryViewControllerTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return entries.count
+        return articles.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "entry", for: indexPath)
-        let entry = self.entries[indexPath.row]
+        let entry = self.articles[indexPath.row]
         cell.textLabel?.text = entry.title
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selected = articles[indexPath.row]
+        let sfVC = SFSafariViewController(url: selected.url, entersReaderIfAvailable: false)
+        present(sfVC, animated: true, completion: nil)
     }
 
     /*
