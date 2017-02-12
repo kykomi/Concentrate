@@ -26,7 +26,6 @@ class EntryViewControllerTableViewController: UITableViewController, CategoryCho
     // MARK: - Original Methods
     func load(_ category: Category) {
         RssRequestClient().request(category, status: .hot, completionHandler: self.didLoadArticles)
-        tableView.reloadData()
     }
     
     func didLoadArticles(articles: [HatebArticle]) {

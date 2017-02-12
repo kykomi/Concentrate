@@ -40,7 +40,17 @@ class RssParser: NSObject, XMLParserDelegate {
     }
     
     public func parser(_ parser: XMLParser, foundCharacters string: String) {
-        attrs[key] = attrs[key] ?? "" + string
+        if key == "title" {
+            print(string)
+        }
+        let editted = string.replacingOccurrences(of: "\n", with: "", options: .literal, range: nil)
+        
+        switch key {
+        case "link", "hatena:bookmarkcount":
+            attrs[key] = (attrs[key] ?? "") + editted.replacingOccurrences(of: " ", with: "", options: .literal, range: nil)
+        default:
+            attrs[key] = (attrs[key] ?? "") + editted
+        }
     }
 
     public func parser(_ parser: XMLParser,
