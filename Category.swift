@@ -42,11 +42,13 @@ enum Category: String {
     static func values() -> [Category] {
         return [
             .hotentry,
+            .general,
             .social,
             .economics,
             .life,
             .knowledge,
             .it,
+            .fun,
             .entertainment,
             .game
         ]
