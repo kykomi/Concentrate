@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol CategoryChoiceDelegate {
+    func didSelect(category: Category) -> Void
+}
+
 class CategoryChoiceTableViewController: UITableViewController {
+    
+    var delegate: CategoryChoiceDelegate? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +38,11 @@ class CategoryChoiceTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath)
         cell.textLabel?.text = Category.values()[indexPath.row].rawValue
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.didSelect(category: Category.values()[indexPath.row])
+        dismiss(animated: true, completion: nil)
     }
     
     

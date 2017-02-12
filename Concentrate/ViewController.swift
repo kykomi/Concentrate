@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     @IBAction func switchChanged(_ sender: Any) {
         
         let rssClient = RssRequestClient()
-        rssClient.request(category: .it, status: .hot, completionHandler: { articles in })
+        rssClient.request(.it, status: .hot, completionHandler: { articles in })
         
         SFContentBlockerManager.reloadContentBlocker(
             withIdentifier: "com.kykomi.Concentrate.Blocking",

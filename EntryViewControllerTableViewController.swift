@@ -9,13 +9,13 @@
 import UIKit
 import SafariServices
 
-class EntryViewControllerTableViewController: UITableViewController {
+class EntryViewControllerTableViewController: UITableViewController, CategoryChoiceDelegate {
     
     var articles: [HatebArticle] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        load()
+        load(Category.it)
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,8 +24,8 @@ class EntryViewControllerTableViewController: UITableViewController {
     }
     
     // MARK: - Original Methods
-    func load() {
-        RssRequestClient().request(category: .it, status: .hot, completionHandler: self.didLoadArticles)
+    func load(_ category: Category) {
+        RssRequestClient().request(category, status: .hot, completionHandler: self.didLoadArticles)
         tableView.reloadData()
     }
     
@@ -59,14 +59,14 @@ class EntryViewControllerTableViewController: UITableViewController {
         present(sfVC, animated: true, completion: nil)
     }
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        ((segue.destination as? UINavigationController)?.topViewController as? CategoryChoiceTableViewController)?.delegate = self
     }
-    */
+    
+    // MARK: Category Choice Delegate
+    func didSelect(category: Category) {
+        load(category)
+    }
 
 }
