@@ -20,7 +20,8 @@ class RssRequestClient {
             }
             
             if let data = data {
-                print(data)
+                let parser = RssParser()
+                parser.parse(data: data)
             }
 
         }).resume()

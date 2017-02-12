@@ -15,6 +15,7 @@
 		5D0067761E18CF1900462E4D /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D0067751E18CF1900462E4D /* empty.json */; };
 		5D0067781E18CF1900462E4D /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0067771E18CF1900462E4D /* ContentBlockerRequestHandler.swift */; };
 		5D00677C1E18CF1900462E4D /* Blocking.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5D0067731E18CF1800462E4D /* Blocking.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5D0E23951E4FEEA300C70250 /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0E23941E4FEEA300C70250 /* RssParser.swift */; };
 		5D3AA1DD1E4EF19500A7BF25 /* HatebArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AA1DC1E4EF19500A7BF25 /* HatebArticle.swift */; };
 		5D3AA1DF1E4EF21800A7BF25 /* RssRequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AA1DE1E4EF21800A7BF25 /* RssRequestClient.swift */; };
 		5D3AA1E11E4EF24100A7BF25 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AA1E01E4EF24100A7BF25 /* Category.swift */; };
@@ -58,6 +59,7 @@
 		5D0067751E18CF1900462E4D /* empty.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
 		5D0067771E18CF1900462E4D /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
 		5D0067791E18CF1900462E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D0E23941E4FEEA300C70250 /* RssParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RssParser.swift; sourceTree = "<group>"; };
 		5D3AA1DC1E4EF19500A7BF25 /* HatebArticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HatebArticle.swift; sourceTree = "<group>"; };
 		5D3AA1DE1E4EF21800A7BF25 /* RssRequestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RssRequestClient.swift; sourceTree = "<group>"; };
 		5D3AA1E01E4EF24100A7BF25 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				5D3AA1DE1E4EF21800A7BF25 /* RssRequestClient.swift */,
 				5D3AA1E01E4EF24100A7BF25 /* Category.swift */,
 				5D3AA1E21E4EF48000A7BF25 /* EntryStatus.swift */,
+				5D0E23941E4FEEA300C70250 /* RssParser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				5D00675E1E18CDEA00462E4D /* AppDelegate.swift in Sources */,
 				5D3AA1E31E4EF48000A7BF25 /* EntryStatus.swift in Sources */,
 				5D3AA1DD1E4EF19500A7BF25 /* HatebArticle.swift in Sources */,
+				5D0E23951E4FEEA300C70250 /* RssParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
