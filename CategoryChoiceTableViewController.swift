@@ -33,6 +33,11 @@ class CategoryChoiceTableViewController: UITableViewController {
         cell.textLabel?.text = Category.values()[indexPath.row].rawValue
         return cell
     }
+    
+    
+    @IBAction func cancelTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 
     // MARK: - Navigation
     /*

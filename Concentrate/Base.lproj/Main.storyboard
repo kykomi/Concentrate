@@ -79,7 +79,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="llU-A8-x1L">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="erE-gF-TSt"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="erE-gF-TSt">
+                            <connections>
+                                <action selector="cancelTapped:" destination="Gbf-Wh-ZFa" id="5rj-fR-lfA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Avq-PY-bl2" userLabel="First Responder" sceneMemberID="firstResponder"/>
