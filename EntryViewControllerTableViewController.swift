@@ -9,20 +9,31 @@
 import UIKit
 
 class EntryViewControllerTableViewController: UITableViewController {
+    
+    var entries: [HatebArticle] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        load()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Original Methods
+    func load() {
+        RssRequestClient().request(category: .it, status: .hot, completionHandler: self.didLoadEntry)
+        tableView.reloadData()
+    }
+    
+    func didLoadEntry(entries: [HatebArticle]) {
+        self.entries = entries
+        DispatchQueue.main.async { [weak self] in
+            guard let wself = self else { return }
+            wself.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
@@ -31,12 +42,13 @@ class EntryViewControllerTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return entries.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "entry", for: indexPath)
-        cell.textLabel?.text = String(indexPath.row)
+        let entry = self.entries[indexPath.row]
+        cell.textLabel?.text = entry.title
         return cell
     }
 
