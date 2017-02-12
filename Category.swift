@@ -20,5 +20,19 @@ enum Category: String {
     case it = "it"
     case fun = "fun"
     case entertainment = "entertainment"
-    case game = "game"        
+    case game = "game"
+    
+    static func values() -> [Category] {
+        return [
+            .hotentry,
+            .social,
+            .economics,
+            .life,
+            .knowledge,
+            .it,
+            .entertainment,
+            game
+        ]
+    }
+    
 }
