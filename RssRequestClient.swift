@@ -11,7 +11,7 @@ import Foundation
 class RssRequestClient {
     static let baseUrl = "http://b.hatena.ne.jp/"
     
-    func request(category: Category, status: EntryStatus)-> Void {
+    func request(category: Category, status: EntryStatus, completionHandler: @escaping ([HatebArticle])->Void)-> Void {
         let rssUrlString = RssRequestClient.baseUrl + status.rawValue + "/" + category.rawValue + ".rss"
         let url = URL(string: rssUrlString)!
         URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
@@ -20,7 +20,7 @@ class RssRequestClient {
             }
             
             if let data = data {
-                let parser = RssParser()
+                let parser = RssParser(completionHandler: completionHandler)
                 parser.parse(data: data)
             }
 

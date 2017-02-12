@@ -12,12 +12,16 @@ class RssParser: NSObject, XMLParserDelegate {
     var key: String = ""
     var articles: [HatebArticle] = []
     var attrs: [String:String] = [:]
+    let completionHandler: ([HatebArticle]) -> Void
     
-    func parse(data: Data) -> [HatebArticle]  {
+    init(completionHandler: @escaping ([HatebArticle]) -> Void) {
+        self.completionHandler = completionHandler
+    }
+    
+    func parse(data: Data) {
         let parser = XMLParser(data: data)
         parser.delegate = self
         parser.parse()
-        return []
     }
     
     public func parser(
@@ -62,6 +66,6 @@ class RssParser: NSObject, XMLParserDelegate {
     }
     
     public func parserDidEndDocument(_ parser: XMLParser) {
-        print(articles)
+        self.completionHandler(articles)
     }
 }
