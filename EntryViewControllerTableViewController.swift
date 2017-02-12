@@ -36,6 +36,7 @@ class EntryViewControllerTableViewController: UITableViewController, CategoryCho
             guard let wself = self else { return }
             wself.navigationItem.title = wself.selectedCategory.title()
             wself.tableView.reloadData()
+            wself.tableView.scrollToRow(at: IndexPath(row: 0, section: 0) , at: .top, animated: false)
         }
     }
 
