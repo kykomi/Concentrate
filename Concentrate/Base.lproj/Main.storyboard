@@ -54,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tiM-o1-3eQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1166" y="-407"/>
+            <point key="canvasLocation" x="154" y="-188"/>
         </scene>
         <!--Category Choice Table View Controller-->
         <scene sceneID="bf8-3Y-5MR">
@@ -109,7 +109,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="タイトルタイトルタイトルタイトルタイトルタイトル" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgl-4v-2zz">
                                             <rect key="frame" x="16" y="12" width="347" height="53.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -168,7 +168,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ce6-Fg-hAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-359" y="-763"/>
+            <point key="canvasLocation" x="-423" y="-1110"/>
         </scene>
         <!--Item-->
         <scene sceneID="7XX-jR-Tp0">
