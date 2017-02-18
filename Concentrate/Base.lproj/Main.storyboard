@@ -69,7 +69,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2AW-lU-fZh" id="Amt-50-kcX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -104,7 +104,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="105"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Foc-AX-Ipf" id="zok-H6-OzF">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="タイトルタイトルタイトルタイトルタイトルタイトル" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgl-4v-2zz">
@@ -113,24 +113,34 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="42" placeholderIntrinsicHeight="21" text="xxxUsesr" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOg-TZ-BN2">
-                                            <rect key="frame" x="321" y="73.5" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="753" misplaced="YES" placeholderIntrinsicWidth="42" placeholderIntrinsicHeight="21" text="xxxUsesr" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOg-TZ-BN2">
+                                            <rect key="frame" x="16" y="73.5" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="740" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ya7-1Z-MPI">
+                                            <rect key="frame" x="87" y="77" width="276" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Ya7-1Z-MPI" firstAttribute="leading" secondItem="ZOg-TZ-BN2" secondAttribute="trailing" constant="29" id="2VN-6d-ERr"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="ZOg-TZ-BN2" secondAttribute="bottom" constant="2" id="9cZ-6m-IJy"/>
                                         <constraint firstAttribute="trailing" secondItem="xgl-4v-2zz" secondAttribute="trailing" constant="12" id="Bqg-yD-feN"/>
+                                        <constraint firstItem="Ya7-1Z-MPI" firstAttribute="bottom" secondItem="ZOg-TZ-BN2" secondAttribute="bottom" id="Io7-Ts-2nR"/>
                                         <constraint firstItem="ZOg-TZ-BN2" firstAttribute="top" secondItem="xgl-4v-2zz" secondAttribute="bottom" constant="8" id="Kai-x3-eXq"/>
+                                        <constraint firstItem="Ya7-1Z-MPI" firstAttribute="trailing" secondItem="xgl-4v-2zz" secondAttribute="trailing" id="WtG-rh-gHY"/>
                                         <constraint firstItem="xgl-4v-2zz" firstAttribute="leading" secondItem="zok-H6-OzF" secondAttribute="leading" constant="16" id="aIS-YO-FXO"/>
-                                        <constraint firstItem="ZOg-TZ-BN2" firstAttribute="trailing" secondItem="xgl-4v-2zz" secondAttribute="trailing" id="eWr-mf-O1B"/>
+                                        <constraint firstItem="ZOg-TZ-BN2" firstAttribute="leading" secondItem="xgl-4v-2zz" secondAttribute="leading" id="fAg-aV-8q1"/>
                                         <constraint firstItem="xgl-4v-2zz" firstAttribute="top" secondItem="zok-H6-OzF" secondAttribute="top" constant="12" id="ooc-wG-cQO"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="bookmarkText" destination="ZOg-TZ-BN2" id="nvw-Ad-mjS"/>
+                                    <outlet property="domainText" destination="Ya7-1Z-MPI" id="HcM-Rg-2z2"/>
                                     <outlet property="title" destination="xgl-4v-2zz" id="OLz-E7-vub"/>
                                 </connections>
                             </tableViewCell>

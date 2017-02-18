@@ -13,6 +13,7 @@ class EntryCellTableViewCell: UITableViewCell {
     
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var bookmarkText: UILabel!
+    @IBOutlet weak var domainText: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,5 +29,8 @@ class EntryCellTableViewCell: UITableViewCell {
     func setData(_ entry: HatebArticle) {
         title.text = entry.title
         bookmarkText.text = "\(entry.bookmarkCount) Users"
+        domainText.text = entry.url.host ?? ""
+        
     }
+
 }
