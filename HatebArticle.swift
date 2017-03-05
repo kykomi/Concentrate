@@ -14,4 +14,5 @@ struct HatebArticle {
     let description: String
     let categoryName: String
     let bookmarkCount: Int
+    let faviconUrl: URL?
 }

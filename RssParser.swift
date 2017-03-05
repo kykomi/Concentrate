@@ -40,9 +40,6 @@ class RssParser: NSObject, XMLParserDelegate {
     }
     
     public func parser(_ parser: XMLParser, foundCharacters string: String) {
-        if key == "title" {
-            print(string)
-        }
         let editted = string.replacingOccurrences(of: "\n", with: "", options: .literal, range: nil)
         
         switch key {
@@ -67,15 +64,33 @@ class RssParser: NSObject, XMLParserDelegate {
             let category = attrs["dc:subject"],
             let bCount = attrs["hatena:bookmarkcount"]
             else { return }
-        
+
         guard let url = URL(string: urlString) else { return }
         guard let bookmarkCount = Int(bCount) else { return }
-        
-        let article = HatebArticle(title: title, url: url, description: desc, categoryName: category, bookmarkCount: bookmarkCount)
+        let faviconUrl = extractFaviconUrl(from: attrs["content:encoded"])
+        let article = HatebArticle(title: title,
+                                   url: url,
+                                   description: desc,
+                                   categoryName: category,
+                                   bookmarkCount: bookmarkCount,
+                                   faviconUrl: faviconUrl)
         articles.append(article)
     }
     
     public func parserDidEndDocument(_ parser: XMLParser) {
         self.completionHandler(articles)
+    }
+    
+    private func extractFaviconUrl(from text: String?) -> URL? {
+        guard let text = text else { return nil }
+        /*
+         <blockquote cite="http://www.smartstyle-blog.net/entry/CareerForProgrammer" title="今年39歳の私が、「プログラマー35歳定年説」について、考察してみる。 - 羊の夜をビールで洗う"><cite><img src="http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fwww.smartstyle-blog.net%2Fentry%2FCareerForProgrammer" alt="" /> <a href="http://www.smartstyle-blog.net/entry/CareerForProgrammer">今年39歳の私が、「プログラマー35歳定年説」について、考察してみる。 - 羊の夜をビールで洗う</a></cite><p>2017 - 02 - 18 今年39歳の私が、「プログラマー35歳定年説」について、考察してみる。 しごと タイトルを書いてみて、「39」という数字の重みにいきなり、ずーん、となっている私です...。 ま、それはさておき、私が本業としているIT業界には、「プログラマー35歳定年説」というものがあります。 IT業界のお仕事には、現実世界のどの部分をソフトウェアで効率化するかを考える仕事（要件定義）...</p><p><a href="http://b.hatena.ne.jp/entry/http://www.smartstyle-blog.net/entry/CareerForProgrammer"><img src="http://b.hatena.ne.jp/entry/image/http://www.smartstyle-blog.net/entry/CareerForProgrammer" alt="はてなブックマーク - 今年39歳の私が、「プログラマー35歳定年説」について、考察してみる。 - 羊の夜をビールで洗う" title="はてなブックマーク - 今年39歳の私が、「プログラマー35歳定年説」について、考察してみる。 - 羊の夜をビールで洗う" border="0" style="border: none" /></a> <a href="http://b.hatena.ne.jp/append?http://www.smartstyle-blog.net/entry/CareerForProgrammer"><img src="http://b.hatena.ne.jp/images/append.gif" border="0" alt="はてなブックマークに追加" title="はてなブックマークに追加" /></a></p></blockquote>
+        */
+        
+        guard let regex = try? NSRegularExpression(pattern: "<img\\ssrc=\"([^\">]+)\"[^>]+/>", options: []) else { return nil }
+        let matches = regex.matches(in: text, options: [], range: NSRange(location: 0, length: text.characters.count))
+        guard let faviconUrlRange = matches.first?.rangeAt(1) else { return nil }
+        let faviconUrl = (text as NSString).substring(with: faviconUrlRange)
+        return URL(string: faviconUrl)
     }
 }
