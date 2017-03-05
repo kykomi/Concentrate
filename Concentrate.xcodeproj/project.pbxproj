@@ -19,7 +19,7 @@
 		5D0E23971E50226500C70250 /* EntryViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0E23961E50226500C70250 /* EntryViewControllerTableViewController.swift */; };
 		5D0E239A1E50366700C70250 /* CategoryChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0E23991E50366700C70250 /* CategoryChoiceTableViewController.swift */; };
 		5D0E239D1E503E7300C70250 /* EntryCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0E239C1E503E7300C70250 /* EntryCellTableViewCell.swift */; };
-		5D31E6191E6BDA50000FB04B /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D31E6181E6BDA50000FB04B /* SDWebImage.framework */; };
+		5D31E61E1E6BE001000FB04B /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D31E6181E6BDA50000FB04B /* SDWebImage.framework */; };
 		5D3AA1DD1E4EF19500A7BF25 /* HatebArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AA1DC1E4EF19500A7BF25 /* HatebArticle.swift */; };
 		5D3AA1DF1E4EF21800A7BF25 /* RssRequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AA1DE1E4EF21800A7BF25 /* RssRequestClient.swift */; };
 		5D3AA1E11E4EF24100A7BF25 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AA1E01E4EF24100A7BF25 /* Category.swift */; };
@@ -68,6 +68,7 @@
 		5D0E23991E50366700C70250 /* CategoryChoiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryChoiceTableViewController.swift; sourceTree = "<group>"; };
 		5D0E239C1E503E7300C70250 /* EntryCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryCellTableViewCell.swift; sourceTree = "<group>"; };
 		5D31E6181E6BDA50000FB04B /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		5D31E61A1E6BDB02000FB04B /* Build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Build; path = Carthage/Build; sourceTree = "<group>"; };
 		5D3AA1DC1E4EF19500A7BF25 /* HatebArticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HatebArticle.swift; sourceTree = "<group>"; };
 		5D3AA1DE1E4EF21800A7BF25 /* RssRequestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RssRequestClient.swift; sourceTree = "<group>"; };
 		5D3AA1E01E4EF24100A7BF25 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -80,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D31E6191E6BDA50000FB04B /* SDWebImage.framework in Frameworks */,
+				5D31E61E1E6BE001000FB04B /* SDWebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +161,7 @@
 		5D31E6171E6BDA50000FB04B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D31E61A1E6BDB02000FB04B /* Build */,
 				5D31E6181E6BDA50000FB04B /* SDWebImage.framework */,
 			);
 			name = Frameworks;
@@ -188,6 +190,7 @@
 				5D0067571E18CDE900462E4D /* Frameworks */,
 				5D0067581E18CDE900462E4D /* Resources */,
 				5D0067801E18CF1900462E4D /* Embed App Extensions */,
+				5D31E61F1E6BE08E000FB04B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -278,6 +281,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5D31E61F1E6BE08E000FB04B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5D0067561E18CDE900462E4D /* Sources */ = {
