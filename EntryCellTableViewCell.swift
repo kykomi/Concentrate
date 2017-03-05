@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class EntryCellTableViewCell: UITableViewCell {
     
@@ -14,6 +15,7 @@ class EntryCellTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var bookmarkText: UILabel!
     @IBOutlet weak var domainText: UILabel!
+    @IBOutlet weak var faviconImage: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,7 +32,9 @@ class EntryCellTableViewCell: UITableViewCell {
         title.text = entry.title
         bookmarkText.text = "\(entry.bookmarkCount) Users"
         domainText.text = entry.url.host ?? ""
-        
+        faviconImage.sd_setImage(with: entry.faviconUrl)
+        title.sizeToFit()
+
     }
 
 }
