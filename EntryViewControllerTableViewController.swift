@@ -13,7 +13,7 @@ class EntryViewControllerTableViewController: UITableViewController, CategoryCho
     
     var selectedCategory: Category!
     var articles: [HatebArticle] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
